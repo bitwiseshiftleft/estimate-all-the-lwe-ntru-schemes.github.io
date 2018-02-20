@@ -77,10 +77,13 @@ function make_charts(xaxis,yaxis) {
         if (sub in datasets) {
             ds = datasets[sub];
         } else {
-            var hue = Math.round((datasets_l.length*360*0.618) % 360);
+            var n = datasets_l.length;
+            var hue = Math.round((n*360*5/19.) % 360);
+            var saturation = 70 + Math.round((n*30*7/19.) % 30);
+            var lightness = 20 + Math.round((n*40*2/19) % 40);
             ds = datasets[sub] = {label:sub,data:[],radius:4,
-                borderColor:"hsl(" + hue + ",100%,50%)",
-                backgroundColor:"hsl(" + hue + ",100%,50%,0.2)"};
+                borderColor:"hsl(" + hue + "," + saturation + "%," + lightness + "%)",
+                backgroundColor:"hsla(" + hue + "," + saturation + "%," + lightness + "%,0.4)"};
             datasets_l.push(ds);
         }
         ds.data.push(rk);
