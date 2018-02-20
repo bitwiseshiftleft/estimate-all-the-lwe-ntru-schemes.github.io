@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <title>Estimate all the {LWE, NTRU} schemes! -- Performance graphs</title>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css" type="text/css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.foundation.min.css" type="text/css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css">
+  <link rel="stylesheet" href="css/codemirror.css">
+  <link rel="stylesheet" href="css/jquery.multiselect.css">
+  <link rel="stylesheet" href="css/neo.css">
+  <link rel="stylesheet" href="css/mdn-like.css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="css/dialog.css" type="text/css">
+  <link rel="stylesheet" href="css/spinner.css" type="text/css">
+  <link rel="stylesheet" href="css/chart.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="js/codemirror.js"></script>
+  <script type="text/javascript" src="js/jquery.multiselect.js"></script>
+  <script type="text/javascript" src="js/python/python.js"></script>
+  <script type="text/javascript" src="js/dialog.js"></script>
+  <script type="text/javascript" src="res/full_table.js"></script>
+  <script type="text/javascript" src="js/table.js"></script>
+  <script type="text/javascript" src="js/Chart.min.js"></script>
+  <script type="text/javascript" src="js/make_charts.js"></script>
+</head>
+<body onload='make_charts("Performance","Q\u2011Core\u2011Sieve")'>
+  <img src="res/logo.png"></img>
+  <div id="intro">
+    <p>Graphs of <a href="." target="_blank">Estimate all the {LWE, NTRU} schemes!</a> indexed to the <a href="https://www.safecrypto.eu/pqclounge/" target="_blank">PQC Lounge</a> data.</p></div>
+  <canvas id="chart" width="400" height="200"></canvas>
+  <div id="choose">
+      <div id="xform" class="axis_form">
+          x-axis: <select id="x" style="display:inline" onchange="update_charts()"><option value="Performance" selected>Performance</option></select>
+          <div id="bytesx">
+          sk bytes: <input type="text" class="coeff" name="sk" id="xsk" value="1">
+          pk bytes: <input type="text" class="coeff" name="pk" id="xpk" value="1">
+          ct/sig bytes: <input type="text" class="coeff" name="bytes" id="xbytes" value="0">
+          </div>
+          <div id="timex">
+          keypair kcy: <input type="text" class="coeff" name="keypair" id="xkeypair" value="0">
+          enc kcy: <input type="text" class="coeff" name="enc" id="xenc" value="0">
+          dec kcy: <input type="text" class="coeff" name="dec" id="xdec" value="0">
+          </div>
+      </div>
+      <div id="yform" class="axis_form">
+          y-axis: <select id="y" style="display:inline" onchange="update_charts()"><option value="Performance" selected>Performance</option></select>
+          <div id="bytesy">
+          sk bytes: <input type="text" class="coeff" name="sk" id="ysk" value="0">
+          pk bytes: <input type="text" class="coeff" name="pk" id="ypk" value="1">
+          ct/sig bytes: <input type="text" class="coeff" name="bytes" id="ybytes" value="1">
+          </div>
+          <div id="timey">
+          keypair kcy: <input type="text" class="coeff" name="keypair" id="ykeypair" value="0">
+          enc kcy: <input type="text" class="coeff" name="enc" id="yenc" value="0">
+          dec kcy: <input type="text" class="coeff" name="dec" id="ydec" value="0">
+          </div>
+      </div>
+  </div>
+  <hr>
+  <div class="authors">Estimates by Martin R. Albrecht, Benjamin R. Curtis, Amit Deo, Alex Davidson, Rachel Player, Eamonn Postlethwaite, Fernando Virdia, Thomas Wunderer.  Data extracted by Safe Crypto project.  Graphs by Mike Hamburg using chart.js.</div>
+</body>
+</html>

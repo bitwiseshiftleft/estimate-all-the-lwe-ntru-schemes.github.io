@@ -212,6 +212,25 @@ def main():
     return estimates_list
 
 
+def main_load():
+    """ Main function costing LWE and NTRU schemes, loading from a Sage object.
+
+    :return estimates_list:     list containing scheme costs
+    """
+
+    estimates_list = load(SOBJPATH)
+    
+    try:
+        print "Generating html"
+        generate_json(estimates_list)
+
+    except Exception, e:
+        print "Error generating html:", e
+
+    print "Done."
+    #return estimates_list
+
+
 def debug_call():
     """ Debug call to a single costing.
         It avoids the automatic exception handling done by @parallel.
@@ -225,5 +244,6 @@ def debug_call():
 """
 import __main__
 if __name__ == "__main__" and hasattr(__main__, '__file__'):
+    #main_load()
     main()
     # debug_call()

@@ -14,11 +14,54 @@ from cost_asymptotics import BKZ_COST_ASYMPTOTICS
 from inspect import getsource
 from string import lower
 import json
+import csv
 
 try:
     from config import JSONPATH
 except ImportError:
     JSONPATH = "docs/res/full_table.js"
+    
+try:
+    from config import SAFECRYPTO_PATH
+except ImportError:
+    SAFECRYPTO_PATH = "safecrypto/"
+
+def parse_num(x,cls=float):
+    if x == "": x = 0
+    try: return cls(x)
+    except ValueError: return cls(x.replace(",",""))
+
+csv_translation_dict = {
+    "Enc Median":("enc",1),
+    "Encrypt Median":("enc",1),
+    "Dec Median":("dec",1),
+    "Open Median":("dec",1),
+    "KeyPair Median":("keypair",1),
+    "KeyPair Median x10^3":("keypair",1e3),
+    "sk":("sk",1),
+    "pk":("pk",1),
+    "ct":("bytes",1),
+    "bytes":("bytes",1)
+}
+
+def csv_to_dict(filename,ret={},key="Specific Implementation"):
+    """ Load a CSV file and parse the result to a dictionary
+    """
+    csvtd = csv_translation_dict
+    with open(filename,"r") as f:
+        header = None
+        for row in csv.reader(f):
+            if header is None:
+                header = row
+            else:
+                cur = {}
+                for k,v in zip(header,row):
+                    if k in csvtd and csvtd[k][0] not in cur:
+                        cur[csvtd[k][0]] = parse_num(v)*csvtd[k][1]
+                    elif k == key: ret[v] = cur
+                    elif k == "Submission": cur[k] = v
+    return ret
+
 
 
 def generate_costs_json():
@@ -43,6 +86,12 @@ def generate_table_json(estimates_list):
     :returns:                       the generated string
     """
 
+
+    csvdata = {}
+    csv_to_dict(SAFECRYPTO_PATH+"kem.csv",csvdata)
+    csv_to_dict(SAFECRYPTO_PATH+"enc.csv",csvdata)
+    csv_to_dict(SAFECRYPTO_PATH+"sig.csv",csvdata)
+    
     def sanitise_param(scheme):
         """ Given a Sagemath object, it sanitises its entries for enabling JSON
             dumping.
@@ -52,6 +101,10 @@ def generate_table_json(estimates_list):
         ring = False
         if "ring" in scheme["param"]:
             ring = scheme["param"]["ring"]
+        
+        if "perfkey" in scheme["param"] and scheme["param"]["perfkey"] in csvdata:
+            scheme["perf"] = csvdata[scheme["param"]["perfkey"]]
+        
         # sanitise secret_distribution
         secret_distribution = False
         if "secret_distribution" in scheme["param"]:

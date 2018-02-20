@@ -1,0 +1,30 @@
+select#x, select#y {
+    display: inline-block;
+    width: 10em;
+    height: 1.7em;
+    max-height: 1.7em;
+    padding: 0.1em;
+    margin: 0px;
+    position: relative;
+    top: 0px;
+}
+
+input.coeff[type="text"] {
+    display: inline-block;
+    width: 5em;
+    height: 1.7em;
+    padding: 0.1em;
+    margin: 0em 1em 0em 0em;
+}
+
+div.axis_form {
+    margin: 0.5em;
+    padding: 0.5em;
+    display: inline-block;
+    border: 1px solid #ccf;
+}
+
+div.axis_form div {
+    margin: 0em;
+    padding: 0em;
+}

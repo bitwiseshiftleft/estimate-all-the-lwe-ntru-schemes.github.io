@@ -38,6 +38,7 @@ LWE_SCHEMES = [
         "name": "AKCN‑RLWE",
         "params": [
             {
+                "perfkey":"AKCN-RLWE",
                 "n": 1024,
                 "sd": sqrt(8),
                 "q": 12289,
@@ -61,6 +62,7 @@ LWE_SCHEMES = [
         "name": "AKCN‑MLWE",
         "params": [
             {
+                "perfkey":"AKCN-MLWE",
                 "n": 256*3,
                 "sd": 1,
                 "q": 7681,
@@ -74,6 +76,7 @@ LWE_SCHEMES = [
                 "ring": "x^{n/k}+1",
             },
             {
+                "perfkey":"AKCN-MLWE",
                 "n": 256*3,
                 "sd": sqrt(5),
                 "q": 7681,
@@ -98,6 +101,7 @@ LWE_SCHEMES = [
         "name": "BabyBear",
         "params": [
             {
+                "perfkey":"BabyBearEphem",
                 "n": 2*312,
                 "sd": 1.,
                 "q": 2**10,
@@ -110,6 +114,7 @@ LWE_SCHEMES = [
                 "ring": "q^{n/k} - q^{n/(2k)} - 1",
             },
             {
+                "perfkey":"BabyBear",
                 "n": 2*312,
                 "sd": sqrt(5/ZZ(8)),
                 "q": 2**10,
@@ -133,6 +138,7 @@ LWE_SCHEMES = [
         "name": "MamaBear",
         "params": [
             {
+                "perfkey":"MamaBearEphem",
                 "n": 3*312,
                 "sd": sqrt(7/ZZ(8)),
                 "q": 2**10,
@@ -145,7 +151,7 @@ LWE_SCHEMES = [
                 "ring": "q^{n/k} - q^{n/(2k)} - 1",
             },
             {
-
+                "perfkey":"MamaBear",
                 "n": 3*312,
                 "sd": sqrt(1/ZZ(2)),
                 "q": 2**10,
@@ -169,7 +175,8 @@ LWE_SCHEMES = [
         "name": "PapaBear",
         "params": [
             { # CPA
-                "n": 3*312, # 1
+                "perfkey":"PapaBearEphem",
+                "n": 4*312, # 1
                 "sd": sqrt(3/ZZ(4)),
                 "q": 2**10, # 2**(10*312) - 2**(5*312) - 1,
                 "k": 3,
@@ -181,7 +188,8 @@ LWE_SCHEMES = [
                 "ring": "q^{n/k} - q^{n/(2k)} - 1",
             },
             { # CCA
-                "n": 3*312, # 1
+                "perfkey":"PapaBear",
+                "n": 4*312, # 1
                 "sd": sqrt(3/ZZ(8)),
                 "q": 2**10, # 2**(10*312) - 2**(5*312) - 1,
                 "k": 3,
@@ -204,6 +212,7 @@ LWE_SCHEMES = [
         "name": "CRYSTALS‑Dilithium",
         "params": [
             {
+                "perfkey":"Dilithium_medium",
                 "n": 256*3,
                 "sd": sqrt((13**2-1)/ZZ(12)).n(),
                 "q": 8380417,
@@ -217,6 +226,7 @@ LWE_SCHEMES = [
                 "ring": "x^{n/k}+1",
             },
             {
+                "perfkey":"Dilithium_recommended",
                 "n": 256*4,
                 "sd": sqrt((11**2-1)/ZZ(12)).n(),
                 "q": 8380417,
@@ -230,6 +240,7 @@ LWE_SCHEMES = [
                 "ring": "x^{n/k}+1",
             },
             {
+                "perfkey":"Dilithium_very_high",
                 "n": 256*5,
                 "sd": sqrt((7**2-1)/ZZ(12)).n(),
                 "q": 8380417,
@@ -254,6 +265,7 @@ LWE_SCHEMES = [
         "name": "CRYSTALS‑Kyber",
         "params": [
             {
+                "perfkey":"kyber512",
                 "n": 256*2,
                 "sd": sqrt(5/ZZ(2)),
                 "q": 7681,
@@ -267,6 +279,7 @@ LWE_SCHEMES = [
                 "ring": "x^{n/k}+1",
             },
             {
+                "perfkey":"kyber768",
                 "n": 256*3,
                 "sd": sqrt(4/ZZ(2)),
                 "q": 7681,
@@ -280,6 +293,7 @@ LWE_SCHEMES = [
                 "ring": "x^{n/k}+1",
             },
             {
+                "perfkey":"kyber1024",
                 "n": 256*4,
                 "sd": sqrt(3/ZZ(2)),
                 "q": 7681,
@@ -305,6 +319,7 @@ LWE_SCHEMES = [
         "name": "Ding Key Exchange",
         "params": [
             {
+                "perfkey":"ding512",
                 "n": 512,
                 "sd": 4.19,
                 "q": 120883,
@@ -316,6 +331,7 @@ LWE_SCHEMES = [
                 "ring": "x^n+1",
             },
             {
+                "perfkey":"ding1024",
                 "n": 1024,
                 "sd": 2.6,
                 "q": 120883,
@@ -339,6 +355,7 @@ LWE_SCHEMES = [
         "name": "EMBLEM",
         "params": [
             {
+                "perfkey":"EMBLEM-I",
                 "n": 770,
                 "sd": 25,
                 "q": 2**24,
@@ -350,6 +367,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"EMBLEM-II.A",
                 "n": 611,
                 "sd": 25,
                 "q": 2**24,
@@ -373,6 +391,7 @@ LWE_SCHEMES = [
         "name": "R EMBLEM",
         "params": [
             {
+                "perfkey":"R.EMBLEM-i,ii",
                 "n": 512,
                 "sd": 25,
                 "q": 2**16,
@@ -384,6 +403,7 @@ LWE_SCHEMES = [
                 "ring": "x^n+1",
             },
             {
+                "perfkey":"R.EMBLEM-iii,iv",
                 "n": 512,
                 "sd": 3,
                 "q": 2**14,
@@ -407,6 +427,7 @@ LWE_SCHEMES = [
         "name": "Frodo",
         "params": [
             {
+                "perfkey":"FrodoKEM-640",
                 "n": 640,
                 "sd": 2.75,
                 "q": 2**15,
@@ -417,6 +438,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"FrodoKEM-976",
                 "n": 976,
                 "sd": 2.3,
                 "q":2**16,
@@ -439,6 +461,7 @@ LWE_SCHEMES = [
         "name": "NewHope",
         "params": [
             {
+                "perfkey":"newhope512cca",
                 "n": 512,
                 "sd": 2,
                 "q": 12289,
@@ -450,6 +473,7 @@ LWE_SCHEMES = [
                 "ring": "x^n+1",
             },
             {
+                "perfkey":"newhope1024cca",
                 "n": 1024,
                 "sd": 2,
                 "q": 12289,
@@ -473,6 +497,7 @@ LWE_SCHEMES = [
         "name": "HILA5",
         "params": [
             {
+                "perfkey":"Hila5",
                 "n": 1024,
                 "sd": sqrt(8),
                 "q": 12289,
@@ -495,6 +520,7 @@ LWE_SCHEMES = [
         "name": "KINDI",
         "params": [
             {
+                "perfkey":"KINDI-256-3-4-2",
                 "n": 256*3,
                 "sd": sqrt((8**2-1)/ZZ(12) + (-0.5)**2),
                 "q": 2**14,
@@ -507,6 +533,7 @@ LWE_SCHEMES = [
                 "ring": "x^{n/k}+1",
             },
             {
+                "perfkey":"KINDI-512-2-2-2",
                 "n": 512*2,
                 "sd": sqrt((4**2-1)/ZZ(12)),
                 "q": 2**13,
@@ -519,6 +546,7 @@ LWE_SCHEMES = [
                 "ring": "x^{n/k}+1",
             },
             {
+                "perfkey":"KINDI-512-2-4-1",
                 "n": 512*2,
                 "sd": sqrt((8**2-1)/ZZ(12)),
                 "q": 2**14,
@@ -531,6 +559,7 @@ LWE_SCHEMES = [
                 "ring": "x^{n/k}+1",
             },
             {
+                "perfkey":"KINDI-256-5-2-2",
                 "n": 256*5,
                 "sd": sqrt((4**2-1)/ZZ(12)),
                 "q": 2**14,
@@ -543,6 +572,7 @@ LWE_SCHEMES = [
                 "ring": "x^{n/k}+1",
             },
             {
+                "perfkey":"KINDI-256-5-2-2",
                 "n": 512*3,
                 "sd": sqrt((4**2-1)/ZZ(12)),
                 "q": 2**13,
@@ -567,6 +597,7 @@ LWE_SCHEMES = [
         "name": "LAC",
         "params": [
             {
+                "perfkey":"LAC128",
                 "n": 512,
                 "sd": 1/sqrt(2),
                 "q": 251,
@@ -580,6 +611,7 @@ LWE_SCHEMES = [
                 "ring": "x^n+1",
             },
             {
+                "perfkey":"LAC192",
                 "n": 1024,
                 "sd": 0.5,
                 "q": 251,
@@ -593,6 +625,7 @@ LWE_SCHEMES = [
                 "ring": "x^n+1",
             },
             {
+                "perfkey":"LAC256",
                 "n": 1024,
                 "sd": 1/sqrt(2),
                 "q": 251,
@@ -618,6 +651,7 @@ LWE_SCHEMES = [
         "name": "LIMA-2p",
         "params": [
             {
+                "perfkey":"CCA.LIMA-2p1024",
                 "n": 1024,
                 "sd": sqrt(10),
                 "q": 133121,
@@ -629,6 +663,7 @@ LWE_SCHEMES = [
                 "ring": "x^n+1",
             },
             {
+                "perfkey":"CCA.LIMA-2p2048",
                 "n": 2048,
                 "sd": sqrt(10),
                 "q": 184321,
@@ -652,6 +687,7 @@ LWE_SCHEMES = [
         "name": "LIMA‑sp",
         "params": [
             {
+                "perfkey":"CCA.LIMA-sp1018",
                 "n": 1018,
                 "sd": sqrt(10),
                 "q": 12521473,
@@ -663,6 +699,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"CCA.LIMA-sp1306",
                 "n": 1306,
                 "sd": sqrt(10),
                 "q": 48181249,
@@ -674,6 +711,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"CCA.LIMA-sp1822",
                 "n": 1822,
                 "sd": sqrt(10),
                 "q": 44802049,
@@ -685,6 +723,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"CCA.LIMA-sp2062",
                 "n": 2062,
                 "sd": sqrt(10),
                 "q": 16900097,
@@ -708,6 +747,7 @@ LWE_SCHEMES = [
         "name": "Lizard",
         "params": [
             {
+                "perfkey":"KEM_CATEGORY1_N536",
                 "n": 536,
                 "sd": sqrt(4**2/ZZ(12)), # q/p = 4
                 "q": 2048,
@@ -718,6 +758,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"KEM_CATEGORY1_N663",
                 "n": 663,
                 "sd": sqrt(4**2/ZZ(12)),
                 "q": 1024,
@@ -728,6 +769,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"KEM_CATEGORY3_N816",
                 "n": 816,
                 "sd": sqrt(4**2/ZZ(12)),
                 "q": 2048,
@@ -738,6 +780,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"KEM_CATEGORY3_N952",
                 "n": 952,
                 "sd": sqrt(4**2/ZZ(12)),
                 "q": 2048,
@@ -749,6 +792,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"KEM_CATEGORY5_N1088",
                 "n": 1088,
                 "sd": sqrt(4**2/ZZ(12)),
                 "q": 4096,
@@ -759,6 +803,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"KEM_CATEGORY5_N1300",
                 "n": 1300,
                 "sd": sqrt(4**2/ZZ(12)),
                 "q": 2048,
@@ -782,6 +827,7 @@ LWE_SCHEMES = [
         "name": "RLizard",
         "params": [
             {
+                "perfkey":"RING_CATEGORY1",
                 "n": 1024,
                 "sd": sqrt(4**2/ZZ(12)),
                 "q": 1024,
@@ -793,6 +839,7 @@ LWE_SCHEMES = [
                 "ring": "x^n+1",
             },
             {
+                "perfkey":"RING_CATEGORY3_N1024",
                 "n": 1024,
                 "sd": sqrt(4**2/ZZ(12)),
                 "q": 2048,
@@ -804,6 +851,7 @@ LWE_SCHEMES = [
                 "ring": "x^n+1",
             },
             {
+                "perfkey":"RING_CATEGORY3_N2048",
                 "n": 2048,
                 "sd": sqrt(4**2/ZZ(12)),
                 "q": 2048,
@@ -815,6 +863,7 @@ LWE_SCHEMES = [
                 "ring": "x^n+1",
             },
             {
+                "perfkey":"RING_CATEGORY5",
                 "n": 2048,
                 "sd": sqrt(4**2/ZZ(12)),
                 "q": 4096,
@@ -839,6 +888,7 @@ LWE_SCHEMES = [
         "name": "LOTUS",
         "params": [
             {
+                "perfkey":"LOTUS128",
                 "n": 576,
                 "sd": 3,
                 "q": 8192,
@@ -850,6 +900,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"LOTUS192",
                 "n": 704,
                 "sd": 3,
                 "q": 8192,
@@ -861,6 +912,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"LOTUS256",
                 "n": 832,
                 "sd": 3,
                 "q": 8192,
@@ -883,6 +935,7 @@ LWE_SCHEMES = [
         "name": "uRound2.KEM",
         "params": [
             {
+                "perfkey":"uround2_kem_n1_fn1_l1/",
                 "n": 500,
                 "sd": sqrt(8**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt((q/p)**2/ZZ(12)), q/p = 8
                 "q": 2**14,
@@ -893,6 +946,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"uround2_kem_n1_fn1_l2/",
                 "n": 580,
                 "sd": sqrt(16**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 16
                 "q": 2**15,
@@ -903,6 +957,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"uround2_kem_n1_fn1_l3/",
                 "n": 630,
                 "sd": sqrt(16**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 16
                 "q": 2**15,
@@ -913,6 +968,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"uround2_kem_n1_fn1_l4/",
                 "n": 786,
                 "sd": sqrt(16**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 16
                 "q": 2**15,
@@ -923,6 +979,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"uround2_kem_n1_fn1_l5/",
                 "n": 786,
                 "sd": sqrt(16**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 16
                 "q": 2**15,
@@ -944,6 +1001,7 @@ LWE_SCHEMES = [
         "name": "uRound2.KEM", # Ring
         "params": [
             {
+                "perfkey":"uround2_kem_nd_l1/",
                 "n": 418,
                 "sd": sqrt(16**2/ZZ(12)),  # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 16
                 "q": 2**12,
@@ -955,6 +1013,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"uround2_kem_nd_l2/",
                 "n": 522,
                 "sd": sqrt(128**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 128
                 "q": 32768,
@@ -966,6 +1025,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"uround2_kem_nd_l3/",
                 "n": 540,
                 "sd": sqrt(64**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 64
                 "q": 16384,
@@ -977,6 +1037,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"uround2_kem_nd_l4/",
                 "n": 700,
                 "sd": sqrt(128**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 128
                 "q": 32768,
@@ -988,6 +1049,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"uround2_kem_nd_l5/",
                 "n": 676,
                 "sd": sqrt(128**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 128
                 "q": 32768,
@@ -1010,6 +1072,7 @@ LWE_SCHEMES = [
         "name": "uRound2.PKE",
         "params": [
             {
+                "perfkey":"uround2_pke_n1_fn1_l1/",
                 "n": 500,
                 "sd": sqrt(16**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 2**4
                 "q": 32768,
@@ -1020,6 +1083,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"uround2_pke_n1_fn1_l2/",
                 "n": 585,
                 "sd": sqrt(16**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 2**4
                 "q": 32768,
@@ -1030,6 +1094,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"uround2_pke_n1_fn1_l3/",
                 "n": 643,
                 "sd": sqrt(16**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 2**4
                 "q": 32768,
@@ -1040,6 +1105,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"uround2_pke_n1_fn1_l4/",
                 "n": 835,
                 "sd": sqrt(8**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 2**3
                 "q": 32768,
@@ -1050,6 +1116,7 @@ LWE_SCHEMES = [
                 ],
             },
             {
+                "perfkey":"uround2_pke_n1_fn1_l5/",
                 "n": 835,
                 "sd": sqrt(8**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 2**3
                 "q": 32768,
@@ -1071,6 +1138,7 @@ LWE_SCHEMES = [
         "name": "uRound2.PKE", # ring
         "params": [
             {
+                "perfkey":"uround2_pke_nd_l1/",
                 "n": 420,
                 "sd": sqrt(4**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 4
                 "q": 1024,
@@ -1082,6 +1150,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"uround2_pke_nd_l2/",
                 "n": 540,
                 "sd": sqrt(16**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 16
                 "q": 8192,
@@ -1093,6 +1162,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"uround2_pke_nd_l3/",
                 "n": 586,
                 "sd": sqrt(16**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 16
                 "q": 8192,
@@ -1104,6 +1174,8 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+
+                "perfkey":"uround2_pke_nd_l4/",
                 "n": 708,
                 "sd": sqrt(64**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), q/p = 2**6
                 "q": 32768,
@@ -1127,6 +1199,7 @@ LWE_SCHEMES = [
         "name": "nRound2.KEM",
         "params": [
             {
+                "perfkey":"nround2_kem_nd_l1/",
                 "n": 400,
                 "sd": sqrt((3209/ZZ(2**8))**2/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), p = 2**8
                 "q": 3209,
@@ -1138,6 +1211,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"nround2_kem_nd_l2/",
                 "n": 486,
                 "sd": sqrt(((1949/ZZ(2**8))**2)/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), p = 2**8
                 "q": 1949,
@@ -1149,6 +1223,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"nround2_kem_nd_l3/",
                 "n": 556,
                 "sd": sqrt(((3343/ZZ(2**8))**2)/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), p = 2**8
                 "q": 3343,
@@ -1160,6 +1235,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"nround2_kem_nd_l4/",
                 "n": 658,
                 "sd": sqrt(((1319/ZZ(2**8))**2)/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), p = 2**8
                 "q": 1319,
@@ -1183,6 +1259,7 @@ LWE_SCHEMES = [
         "name": "nRound2.PKE",
         "params": [
             {
+                "perfkey":"nround2_pke_nd_l1/",
                 "n": 442,
                 "sd": sqrt(((2659/ZZ(2**9))**2)/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), p= 2**9
                 "q": 2659,
@@ -1194,6 +1271,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"nround2_pke_nd_l2/",
                 "n": 556,
                 "sd": sqrt(((3343/ZZ(2**9))**2)/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), p= 2**9
                 "q": 3343,
@@ -1205,6 +1283,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"nround2_pke_nd_l3/",
                 "n": 576,
                 "sd": sqrt(((2309/ZZ(2**9))**2)/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), p= 2**9
                 "q": 2309,
@@ -1216,6 +1295,7 @@ LWE_SCHEMES = [
                 "ring": "\sum_{i=0}^n x^i",
             },
             {
+                "perfkey":"nround2_pke_nd_l4/",
                 "n": 708,
                 "sd": sqrt(((2837/ZZ(2**9))**2)/ZZ(12)), # |e_i| < q/(2p) unif, sd = sqrt(((q/p+1)**2-1)/ZZ(12)), p= 2**9
                 "q": 2837,
@@ -1239,6 +1319,7 @@ LWE_SCHEMES = [
         "name": "LightSaber",
         "params": [
             {
+                "perfkey":"light_saber",
                 "n": 2*256,
                 "sd": sqrt(16/ZZ(3)), # binomial -> sqrt(5), not far from 3
                 "q": 2**13,
@@ -1264,6 +1345,7 @@ LWE_SCHEMES = [
         "name": "Saber",
         "params": [
             {
+                "perfkey":"saber",
                 "n": 3*256,
                 "sd": sqrt(16/ZZ(3)),
                 "q": 2**13,
@@ -1289,6 +1371,7 @@ LWE_SCHEMES = [
         "name": "FireSaber",
         "params": [
             {
+                "perfkey":"fire_saber",
                 "n": 4*256,
                 "sd": sqrt(16/ZZ(3)),
                 "q": 2**13,
@@ -1314,6 +1397,7 @@ LWE_SCHEMES = [
         "name": "qTESLA",
         "params": [
             {
+                "perfkey":"qTesla_128",
                 "n": 1024,
                 "sd": 10/sqrt(2*ln(2)),
                 "q": 8058881,
@@ -1325,6 +1409,7 @@ LWE_SCHEMES = [
                 "ring": "x^n + 1",
             },
             {
+                "perfkey":"qTesla_192",
                 "n": 2048,
                 "sd": 10/sqrt(2*ln(2)),
                 "q": 12681217,
@@ -1336,6 +1421,7 @@ LWE_SCHEMES = [
                 "ring": "x^n + 1",
             },
             {
+                "perfkey":"qTesla_256",
                 "n": 2048,
                 "sd": 10/sqrt(2*ln(2)),
                 "q": 27627521,
@@ -1358,6 +1444,7 @@ LWE_SCHEMES = [
         "name": "Titanium.PKE",
         "params": [
             { # page 24, table 2.1, 128 bits of security
+                "perfkey":"Titanium_CCA_std",
                 "n": 1024,
                 "sd": sqrt(2),
                 "q": 86017,
@@ -1369,6 +1456,7 @@ LWE_SCHEMES = [
                 "ring": "x^n + \sum^{n-1}_{i=1} f_i x^i + f_0 \\text{ *}"
             },
             { # page 24, table 2.1, 128 bits of security
+                "perfkey":"Titanium_CCA_med",
                 "n": 1280,
                 "sd": sqrt(2),
                 "q": 301057,
@@ -1380,6 +1468,7 @@ LWE_SCHEMES = [
                 "ring": "x^n + \sum^{n-1}_{i=1} f_i x^i + f_0 \\text{ *}"
             },
             { # 192 bits of security
+                "perfkey":"Titanium_CCA_hi",
                 "n": 1536,
                 "sd": sqrt(2),
                 "q": 737281,
@@ -1391,6 +1480,7 @@ LWE_SCHEMES = [
                 "ring": "x^n + \sum^{n-1}_{i=1} f_i x^i + f_0 \\text{ *}"
             },
             { # 256 bits of security
+                "perfkey":"Titanium_CCA_super",
                 "n": 2048,
                 "sd": sqrt(2),
                 "q": 1198081,
@@ -1413,6 +1503,7 @@ LWE_SCHEMES = [
         "name": "Titanium.KEM",
         "params": [
             { # page 27, table 2.6
+                "perfkey":"Titanium_CPA_std",
                 "n": 1024,
                 "sd": sqrt(2),
                 "q": 118273,
@@ -1424,6 +1515,7 @@ LWE_SCHEMES = [
                 "ring": "x^n + \sum^{n-1}_{i=1} f_i x^i + f_0 \\text{ *}"
             },
             {
+                "perfkey":"Titanium_CPA_med",
                 "n": 1280,
                 "sd": sqrt(2),
                 "q": 430081,
@@ -1435,6 +1527,7 @@ LWE_SCHEMES = [
                 "ring": "x^n + \sum^{n-1}_{i=1} f_i x^i + f_0 \\text{ *}"
             },
             {
+                "perfkey":"Titanium_CPA_hi",
                 "n": 1536,
                 "sd": sqrt(2),
                 "q": 783361,
@@ -1446,6 +1539,7 @@ LWE_SCHEMES = [
                 "ring": "x^n + \sum^{n-1}_{i=1} f_i x^i + f_0 \\text{ *}"
             },
             {
+                "perfkey":"Titanium_CPA_super",
                 "n": 2048,
                 "sd": sqrt(2),
                 "q": 1198081,
@@ -1471,6 +1565,7 @@ NTRU_SCHEMES = [
         "name": "NTRUEncrypt",
         "params": [
             {
+                "perfkey":"ntru-kem-443",
                 "n": 443,
                 "sd": sqrt((143 + 144)/ZZ(443)),
                 "q": 2048,
@@ -1485,6 +1580,7 @@ NTRU_SCHEMES = [
                 "ring": "x^n - 1",
             },
             {
+                "perfkey":"ntru-kem-743",
                 "n": 743,
                 "sd": sqrt((247 + 248)/ZZ(743)),
                 "q": 2048,
@@ -1503,6 +1599,7 @@ NTRU_SCHEMES = [
                 "ring": "x^n - 1",
             },
             {
+                "perfkey":"ntru-kem-1024",
                 "n": 1024,
                 "sd": 724,
                 "q": 2**30+2**13+1,
@@ -1530,6 +1627,7 @@ NTRU_SCHEMES = [
         "name": "Falcon",
         "params": [
             {
+                "perfkey":"falcon512",
                 "n": 512,
                 "sd": 1.17*sqrt((12289/ZZ(2))/ZZ(512)),
                 "q": 12289,
@@ -1544,6 +1642,7 @@ NTRU_SCHEMES = [
                 "ring": "x^n + 1",
             },
             {
+                "perfkey":"falcon768",
                 "n": 768,
                 "sd": 1.17*sqrt((18433/ZZ(2))/ZZ(768)),
                 "q": 18433,
@@ -1559,6 +1658,7 @@ NTRU_SCHEMES = [
                 "ring": "x^n - x^{n/2} + 1",
             },
             {
+                "perfkey":"falcon1024",
                 "n": 1024,
                 "sd": 1.17*sqrt((12289/ZZ(2))/ZZ(1024)),
                 "q": 12289,
@@ -1585,6 +1685,7 @@ NTRU_SCHEMES = [
         "name": "NTRU HRSS",
         "params": [
            {
+               "perfkey":"NTRU-HRSS-KEM",
                "n": 700,
                "sd": sqrt((700*10/ZZ(16))/ZZ(700)),
                "q": 8192,
@@ -1610,6 +1711,7 @@ NTRU_SCHEMES = [
         "name": "NTRU Prime",
         "params": [
             {
+                "perfkey":"sntrup4591761",
                 "n": 761,
                 "sd": sqrt((761 * 2/ZZ(3))/ZZ(761)),
                 "q": 4591,
@@ -1624,6 +1726,7 @@ NTRU_SCHEMES = [
                 "ring": "x^n - x - 1",
             },
             {
+                "perfkey":"ntrulpr4591761",
                 "n": 761,
                 "sd": sqrt((761 * 2/ZZ(3))/ZZ(761)),
                 "q": 4591,
@@ -1649,6 +1752,7 @@ NTRU_SCHEMES = [
         "name": "pqNTRUsign",
         "params": [
             {
+                "perfkey":"Uniform-1024",
                 "n": 1024,
                 "sd": sqrt(501/ZZ(1024)),
                 "q": 2**16 + 1,
