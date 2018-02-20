@@ -6,6 +6,7 @@
 // TODO: restore Ding key exchange to capital in case safecrypto updates their data
 // TODO: get signatures working
 // TODO: separate CCA, CPA, sigs
+// TODO: menu option for speed, size, etc?
 var g_chart_data = {inited: false, datasets:{}, datasets_l:[]};
 
 function update_charts() {
