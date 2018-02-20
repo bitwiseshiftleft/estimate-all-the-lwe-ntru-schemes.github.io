@@ -71,6 +71,8 @@ function make_charts(xaxis,yaxis) {
         datasets_l[i].data = [];
     }
     
+    var styles = [['circle',4], ['triangle',5], ['rect',4.5], ['rectRot',6]];
+    
     for (var k in rops) {
         var rk = rops[k], sub = rk.submission, ds;
         
@@ -81,9 +83,12 @@ function make_charts(xaxis,yaxis) {
             var hue = Math.round((n*360*5/19.) % 360);
             var saturation = 70 + Math.round((n*30*7/19.) % 30);
             var lightness = 20 + Math.round((n*40*2/19) % 40);
-            ds = datasets[sub] = {label:sub,data:[],radius:4,
+            var style = styles[n%styles.length];
+            ds = datasets[sub] = {label:sub,data:[],
+                radius:style[1]*1.2,
                 borderColor:"hsl(" + hue + "," + saturation + "%," + lightness + "%)",
-                backgroundColor:"hsla(" + hue + "," + saturation + "%," + lightness + "%,0.4)"};
+                backgroundColor:"hsla(" + hue + "," + saturation + "%," + lightness + "%,0.4)",
+                pointStyle:style[0]};
             datasets_l.push(ds);
         }
         ds.data.push(rk);
