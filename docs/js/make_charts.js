@@ -1,12 +1,13 @@
 // TODO: better axis bounds
 // TODO: better axis labels (eg not 1e+2)
 // TODO: better colors
+// TODO: colors? symbols based on assumption??
+// TODO: make colors pop on hover or something?
 // TODO: don't regen chart when changing axis type (hopefully?)
-// TODO: labels callback isn't regenning axis-linked labels
 // TODO: restore Ding key exchange to capital in case safecrypto updates their data
 // TODO: get signatures working
 // TODO: separate CCA, CPA, sigs
-// TODO: menu option for speed, size, etc?
+// TODO: menu option for speed, size, etc?  Hide performance chart when perf isn't selected?
 var g_chart_data = {inited: false, datasets:{}, datasets_l:[]};
 
 function update_charts() {
@@ -150,6 +151,7 @@ function make_charts(xaxis,yaxis) {
                 tooltips: {
                     callbacks: {
                         label: function(it, data) {
+                            var xaxis = $("#x").val(), yaxis = $("#y").val();
                             var ds = data.datasets[it.datasetIndex], p = ds.data[it.index];
                             var ret = [p.label,
                                 "sk:  " + p.data.perf.sk,
@@ -158,11 +160,11 @@ function make_charts(xaxis,yaxis) {
                                 "Gen: " + p.data.perf.keypair,
                                 "Enc: " + p.data.perf.enc,
                                 "Dec: " + p.data.perf.dec];
-                            if (xaxis in e.cost) {
-                                ret.push(xaxis + ": " + e.cost[xaxis].n.rop.toFixed(2));
+                            if (xaxis in p.data.cost) {
+                                ret.push(xaxis + ": " + p.data.cost[xaxis].n.rop.toFixed(2));
                             }
-                            if (yaxis in e.cost && yaxis != xaxis) {
-                                ret.push(yaxis + ": "+ e.cost[yaxis].n.rop.toFixed(2));
+                            if (yaxis in p.data.cost && yaxis != xaxis) {
+                                ret.push(yaxis + ": "+ p.data.cost[yaxis].n.rop.toFixed(2));
                             }
                             return ret;
                         }
