@@ -244,6 +244,6 @@ def debug_call():
 """
 import __main__
 if __name__ == "__main__" and hasattr(__main__, '__file__'):
-    #main_load()
-    main()
+    main_load()
+    #main()
     # debug_call()

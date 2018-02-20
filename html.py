@@ -33,6 +33,7 @@ def parse_num(x,cls=float):
 
 csv_translation_dict = {
     "Enc Median":("enc",1),
+    "Sign Median":("enc",1),
     "Encrypt Median":("enc",1),
     "Dec Median":("dec",1),
     "Open Median":("dec",1),

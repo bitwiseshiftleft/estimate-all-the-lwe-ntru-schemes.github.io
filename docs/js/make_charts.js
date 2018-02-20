@@ -1,3 +1,11 @@
+// TODO: better axis bounds
+// TODO: better axis labels (eg not 1e+2)
+// TODO: better colors
+// TODO: don't regen chart when changing axis type (hopefully?)
+// TODO: labels callback isn't regenning axis-linked labels
+// TODO: restore Ding key exchange to capital in case safecrypto updates their data
+// TODO: get signatures working
+// TODO: separate CCA, CPA, sigs
 var g_chart_data = {inited: false, datasets:{}, datasets_l:[]};
 
 function update_charts() {
