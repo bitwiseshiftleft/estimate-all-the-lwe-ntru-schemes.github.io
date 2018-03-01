@@ -1,3 +1,4 @@
+// TODO: double-check for no duplicate perfkeys
 // TODO: better axis bounds
 // TODO: better axis labels (eg not 1e+2)
 // TODO: better colors
@@ -12,6 +13,15 @@ var g_chart_data = {inited: false, datasets:{}, datasets_l:[]};
 
 function update_charts() {
     make_charts($("#x").val(),$("#y").val());
+}
+
+function fmtNumber(value,index,values) {
+    var av = Math.abs(value);
+    if (av >= 1e4 || (av > 0 && av < 1e-3)) {
+        return value.toExponential(0);
+    } else {
+        return value.toFixed(Math.round(Math.max(0,1-Math.log(av)/Math.log(10))));
+    }
 }
 
 function eval_axis(pcoeffs,sel,e) {
@@ -90,7 +100,7 @@ function make_charts(xaxis,yaxis) {
             ds = datasets[sub];
         } else {
             var n = datasets_l.length;
-            var hue = Math.round((n*360*5/19.) % 360);
+            var hue = Math.round((n*360*6/19.) % 360);
             var saturation = 70 + Math.round((n*30*7/19.) % 30);
             var lightness = 20 + Math.round((n*40*2/19) % 40);
             var style = styles[n%styles.length];
@@ -132,12 +142,22 @@ function make_charts(xaxis,yaxis) {
             },
             options: {
                 scales: {
+                    legend: {
+                        labels: {
+                            usePointStyle: true
+                        }
+                    },
                     xAxes: [{
                         type: xaxis_type,
                         position: 'bottom',
                         scaleLabel: {
                             display: true,
                             labelString: xaxis
+                        },
+                        ticks: {
+                            //minRotation: 45,
+                            //autoSkip: true,
+                            //callback: fmtNumber
                         }
                     }],
                     yAxes: [{
@@ -145,6 +165,10 @@ function make_charts(xaxis,yaxis) {
                         scaleLabel: {
                             display: true,
                             labelString: yaxis
+                        },
+                        ticks: {
+                            //autoSkip: true,
+                            //callback: fmtNumber
                         }
                     }]
                 },
