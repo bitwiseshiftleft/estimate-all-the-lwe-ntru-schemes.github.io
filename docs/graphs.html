@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Estimate all the {LWE, NTRU} schemes! -- Performance graphs</title>
+  <title>(Under?) estimate all the {LWE, NTRU} schemes! -- Performance graphs</title>
   <meta charset="UTF-8">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -24,7 +24,13 @@
 <body onload='make_charts("Performance","Q\u2011Core\u2011Sieve")'>
   <img src="res/logo.png"></img>
   <div id="intro">
-    <p>Graphs of <a href="." target="_blank">Estimate all the {LWE, NTRU} schemes!</a> indexed to the <a href="https://www.safecrypto.eu/pqclounge/" target="_blank">PQC Lounge</a> data.</p></div>
+    <p>Graphs of <a href="." target="_blank">Estimate all the {LWE, NTRU} schemes!</a> indexed to the <a href="https://www.safecrypto.eu/pqclounge/" target="_blank">PQC Lounge</a> data.</p>
+    <p>
+        <b>Note well: The &ldquo;estimates&rdquo; here are not runtimes of actual attacks.</b>  They are calculations used in the proposals' papers to justify their security claims.  Most of them are intentional underestimates for particular attack strategies, under assumptions that are favorable to the attacker.  For example, the sieving estimates are much faster than enumeration, but last I heard sieving is slower in practice.  We don't know if sieving can use less resources than enumeration on problems this size even on classical machines, much less on quantum ones.  Likewise, the quantum enumeration techniques assume a Grover speedup, but none is currently known.  Thanks to DJB for pointing out how this could be confusing.
+    </p>
+    <p>Also, the speed benchmarks for these systems were preliminary benchmarks on unevenly-optimized code, so they're probably mostly noise.  But the bandwidth estimates should be exact.</p>
+    <p>I hope that these plots will nonetheless be useful to highlight trends in the security vs performance (esp. bandwidth) characteristics of the proposals, and to show discrepancies between the different security estimates.</p>
+  </div>
   <canvas id="chart" width="400" height="200"></canvas>
   <div id="choose">
       <div id="xform" class="axis_form">
